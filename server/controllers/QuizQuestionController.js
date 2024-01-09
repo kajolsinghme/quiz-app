@@ -2,7 +2,10 @@ const Question = require('../models/questionModel')
 
 exports.getQuizQuestion = async(req,res) => {
     try{
-        const quizQuestions = await Question.find()
+        const numberOfQuestions = 10;
+        const quizQuestions = await Question.aggregate([
+            { $sample: { size: numberOfQuestions } }
+        ])
         return res.json(quizQuestions)
     }
     catch(error){

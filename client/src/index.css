@@ -1,0 +1,15 @@
+/* CSS Reset */
+body, h1, h2, h3, p, ul, li, figure, figcaption, blockquote {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Optional: Additional styles to normalize default styles across browsers */
+  body {
+    line-height: 1.6;
+  }
+  
+  ul {
+    list-style: none;
+  }
+  

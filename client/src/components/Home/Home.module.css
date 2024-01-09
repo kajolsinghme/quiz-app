@@ -1,0 +1,80 @@
+.quizContainer {
+  width: 1366px;
+  height: 641px;
+  background: #004643B3
+}
+
+.quizContent{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 1360px;
+  height: 631px;
+
+}
+
+h1{
+  color: white;
+  font-size: 48px
+}
+
+.formContainer{
+  display: flex;
+  flex-direction: column;
+
+  width: 300px;
+  height: 300px;
+  margin-bottom: 90px;
+}
+
+label{
+  color: #EEEFF2;
+  font-size: 18px;
+  font-style: normal;
+  font-weight:600;
+  line-height: normal;
+}
+input{
+  margin-top: 10px;
+  border-radius: 20px;
+  height: 30px;
+  width: 278px;
+  font-size: 16px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid #EEEFF2;
+  padding: 10px
+}
+
+input::placeholder{
+  color: white;
+  font-size: small;
+
+}
+
+input:focus {
+  outline: none; /* Remove the default focus outline */
+  border-color: #dba634; /* Change border color on focus */
+  box-shadow: 0 0 5px rgba(185, 201, 42, 0.5); /* Add a subtle box shadow on focus */
+}
+
+button{
+  margin-top: 70px;
+  border-radius: 20px;
+  background: #F8C660;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  width: 300px;
+  height: 52px;
+  border: none;
+  cursor: pointer; 
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #eeab24; /* Slightly darker blue on hover */
+}
+
