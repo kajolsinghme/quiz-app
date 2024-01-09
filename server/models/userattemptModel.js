@@ -1,10 +1,6 @@
 const mongoose = require('mongoose');
 
 const userAttemptSchema = new mongoose.Schema({
-    attemptedId: { 
-        type: String, 
-        required: true 
-    },
     attemptedQuesSoFar: { 
         type: Number, 
         required: true ,
@@ -17,16 +13,22 @@ const userAttemptSchema = new mongoose.Schema({
     },
     settled: { 
         type: Boolean, 
-        required: true 
+        default:false
     },
     attemptedBy: { 
-        type: String, 
+        type: mongoose.Schema.Types.ObjectId,
+        ref:"User",
         required: true 
     },
     lastAction: { 
-        type: String,           //exited by user, quiz completed, null
+        type: String, 
+        enum: ["exited by user", "quiz completed", null],       
         default: null
-    }
-})
+    }    
+},
+{
+    timestamps:true
+}
+)
 
 module.exports = mongoose.model('UserAttempt',userAttemptSchema)

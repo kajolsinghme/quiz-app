@@ -2,16 +2,18 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-require('dotenv').config();
+require('./db/connection')
+require('dotenv').config()
+const userRoutes = require('./routes/userRoutes');
+const questionRoutes = require('./routes/questionRoutes')
 const port = process.env.PORT
-const app = express();
+const app = express()
 
 app.use(cors());
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
-    res.send('HI');
-});
+app.use('/api/v1/users', userRoutes);
+app.use('/api/v1/quiz',questionRoutes);
 
 app.listen(port, () => {
     console.log(`Server running on port ${port} 🔥`);

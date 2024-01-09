@@ -1,25 +1,23 @@
 const mongoose = require('mongoose');
 
 const resultSchema = new mongoose.Schema({
-    resultId:{
-        type: String,
-        required: true
-    },
-    userattemptId:{
-        type: String,
-        required: true
+    attemptedId:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'UserAttempt',
+        required:true
     },
     maxQuizScore:{
         type: Number, 
         default:100
     },
-    attemptedBy:{
-        type: String, 
-        required: true
-    },
     maxQues:{
         type: Number,
         default:10
+    },
+    attemptedBy:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
+        required: true
     },
     attemptedQues:{ 
         type: Number, 
@@ -29,6 +27,9 @@ const resultSchema = new mongoose.Schema({
         type: Number, 
         required: true 
     }
+},
+{
+    timestamps:true
 })
 
 module.exports = mongoose.model('Result',resultSchema)
