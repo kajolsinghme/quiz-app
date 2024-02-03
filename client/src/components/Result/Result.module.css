@@ -1,0 +1,86 @@
+/* Result.css */
+
+.mainContainer {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #004643;
+}
+
+.resultContainer {
+  width: 600px;
+  height: 525px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 48px;
+  border: 3px solid white;
+}
+
+.resultInfo {
+  width: 590px;
+  height: 280px;
+  border: 6px solid white;
+  background-color: #004643;
+  margin-bottom: 20px;
+  border-radius: 20px;
+
+}
+
+.resultInfo p {
+  color: white;
+  height: 45px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; 
+  padding: 0 15px;
+  flex-grow: 1;
+  font-size: 20px;
+}
+.resultInfo p span {
+  color: #fff;
+  font-size: 20px;
+}
+
+.resultInfo p:last-child {
+  color: #dba634; 
+  font-size: 25px;
+}
+
+.resultInfo p:last-child span:last-child {
+  color: #dba634; 
+  font-size: 25px;
+}
+
+.btnContainer {
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.btnContainer button{
+  border-radius: 20px;
+  background: #dba634;
+  color: white;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  width: 260px;
+  height: 52px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-bottom: 10px;
+}
+
+.btnContainer button:hover {
+  background-color: #da9a12;
+}

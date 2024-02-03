@@ -1,80 +1,85 @@
+/* Home.module.css */
+
 .quizContainer {
   width: 1366px;
   height: 641px;
-  background: #004643B3
+  background: #004643;
 }
 
-.quizContent{
+.quizContent {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   width: 1360px;
   height: 631px;
-
 }
 
-h1{
+.headingContainer{
   color: white;
-  font-size: 48px
+  font-size: 48px;
+  border: transparent;
 }
 
-.formContainer{
+.formContainer {
   display: flex;
   flex-direction: column;
-
   width: 300px;
   height: 300px;
   margin-bottom: 90px;
 }
 
-label{
+label {
   color: #EEEFF2;
   font-size: 18px;
   font-style: normal;
-  font-weight:600;
+  font-weight: 600;
   line-height: normal;
+  font-family: 'Poppins', sans-serif;
 }
-input{
+
+.inputhome {
   margin-top: 10px;
   border-radius: 20px;
-  height: 30px;
-  width: 278px;
-  font-size: 16px;
+  height: 36px;
+  width: 300px;
+  font-size: 17px;
   background-color: transparent;
   color: white;
   border: 1px solid #EEEFF2;
-  padding: 10px
+  padding: 10px;
 }
 
-input::placeholder{
+.inputhome::placeholder {
   color: white;
-  font-size: small;
-
+  font-size: 14px;
 }
 
-input:focus {
-  outline: none; /* Remove the default focus outline */
-  border-color: #dba634; /* Change border color on focus */
-  box-shadow: 0 0 5px rgba(185, 201, 42, 0.5); /* Add a subtle box shadow on focus */
+.inputhome:focus {
+  outline: none;
+  border-color: #dba634;
+  box-shadow: 0 0 5px rgba(198, 216, 38, 0.5);
 }
 
-button{
+.startBtn {
   margin-top: 70px;
+}
+
+.startBtn  {
   border-radius: 20px;
-  background: #F8C660;
+  background: #dba634;
   color: white;
   padding: 10px 20px;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: bold;
-  width: 300px;
-  height: 52px;
+  font-family: 'Poppins', sans-serif;
+  width: 325px;
+  height: 55px;
   border: none;
-  cursor: pointer; 
+  cursor: pointer;
   transition: background-color 0.3s;
 }
 
-button:hover {
-  background-color: #eeab24; /* Slightly darker blue on hover */
+.startBtn:hover {
+  background-color: #da9a12;
 }
-
