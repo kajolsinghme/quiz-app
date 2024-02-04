@@ -4,6 +4,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+const baseUrl = import.meta.env.BASE_URL;
 
 const Result = () => {
   const [userAttemptId, setUserAttemptId] = useState(null);
@@ -21,7 +22,7 @@ const Result = () => {
       try{
         console.log(userAttemptId)
         if(userAttemptId){
-          const userAttemptData = await axios.get(`http://localhost:5000/api/v1/user/attempt/get/${userAttemptId}`)
+          const userAttemptData = await axios.get(`${baseUrl}/user/attempt/get/${userAttemptId}`)
           console.log(userAttemptData)
           console.log(userAttemptData.data.attemptedQuesSoFar)
           setTotalAttemptedQues(userAttemptData.data.attemptedQuesSoFar);
@@ -39,7 +40,7 @@ const Result = () => {
 
   const getUserAttempt = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/v1/user/attempt/get", {
+      const response = await axios.get(`${baseUrl}/user/attempt/get`, {
         params: { username: username },
       });
       console.log(response.data)

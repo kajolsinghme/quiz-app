@@ -4,13 +4,14 @@ import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Cookies from 'js-cookie';
+const baseUrl = import.meta.env.BASE_URL;
 
 const Home = () => {
   const [username,setUsername] = useState('')
   const handleFormSubmit = async(e) => {
     e.preventDefault()
     try{
-      const response = await axios.post("http://localhost:5000/api/v1/users/quiz/start",{username:username})
+      const response = await axios.post(`${baseUrl}/users/quiz/start`,{username:username})
       toast.success(response.data.message);
       Cookies.set('username', username);
       setTimeout(() => {

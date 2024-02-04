@@ -4,6 +4,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+const baseUrl = import.meta.env.BASE_URL;
 
 const Quiz = () => {
   const [time, setTime] = useState(300);
@@ -15,22 +16,7 @@ const Quiz = () => {
   const [obtainedScoreSoFar, setObtainedScoreSoFar] = useState(0);
 
   const username = Cookies.get('username');
-
-  {/*useEffect(() => {
-    const storedState = JSON.parse(localStorage.getItem('quizData') || '{}') 
-    if(storedState){
-      setTime(storedState.time || 300);
-      setQuesNo(storedState.quesNo || 1);
-      setValue(storedState.value || '');
-      setCurrentQuesIndex(storedState.currentQuesIndex || 0);
-      setObtainedScoreSoFar(storedState.obtainedScoreSoFar || 0);
-    }
-  },[])
-
-  useEffect(() => {
-    localStorage.setItem('quizData',JSON.stringify({time,quesNo,value,currentQuesIndex,obtainedScoreSoFar}))
-  },[time,quesNo,value,currentQuesIndex,obtainedScoreSoFar])
-*/}
+  console.log(baseUrl)
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -42,7 +28,7 @@ const Quiz = () => {
   useEffect(() => {
     const fetchQuestion = async () => {
       try {
-        const questionData = await axios.get("http://localhost:5000/api/v1/quiz/questions");
+        const questionData = await axios.get(`${baseUrl}/quiz/questions`);
         setQuesData(questionData.data);
       } catch (error) {
         console.error(error);
@@ -93,7 +79,7 @@ const Quiz = () => {
 
   const getUserAttempt = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/v1/user/attempt/get", {
+      const response = await axios.get(`${baseUrl}/user/attempt/get`, {
         params: { username: username }
       });
       console.log(response.data)
@@ -132,7 +118,7 @@ const Quiz = () => {
           lastAction: lastAction,
         };
 
-        await axios.put(`http://localhost:5000/api/v1/user/attempt/update/${userAttemptId}`, updatedData);
+        await axios.put(`${baseUrl}/user/attempt/update/${userAttemptId}`, updatedData);
       }
     } catch (error) {
       console.error(error);
