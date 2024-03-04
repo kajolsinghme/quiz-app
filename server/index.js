@@ -19,5 +19,5 @@ app.use('/api/v1/quiz',questionRoutes);
 app.use('/api/v1/user',userAttemptRoutes);
 
 app.listen(port, () => {
-    console.log(`Server running on port ${port} 🔥`);
+    console.log(`Server running on port ${port}`);
 });
